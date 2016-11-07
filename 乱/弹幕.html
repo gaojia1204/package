@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				
+			}
+			#box{
+				width: 500px;
+				height: 500px;
+				border: 2px solid #000;
+				margin: 100px auto;
+				position: relative;
+			}
+			#box1{
+				width: 500px;
+				height: 300px;
+				
+				position: relative;
+				overflow: hidden;
+			}
+			#p{
+				position: absolute;
+				bottom:0;
+				left: 25%;
+			}
+			span{
+				position: absolute;
+				left:500px;
+				top: 0;
+				display: block;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="box1">
+				
+			</div>
+			<p id="p">
+				<input type="text" name="text" id="text" placeholder="请输入弹幕内容" />
+				<input type="button" id="btn" value="发送" />
+				<input type="button" id="btn1" value="关闭弹幕" />
+			</p>
+		</div>
+		
+		<script type="text/javascript" >
+			var text =document.getElementById("text");
+			var btn =document.getElementById("btn");
+			var btn1=document.getElementById("btn1");
+			var box =document.getElementById("box");
+			var box1 =document.getElementById("box1");
+			
+			btn.onclick=function(){
+				var span=document.createElement('span');
+				span.innerHTML=text.value;
+				span.style.top=suiji1()+'px';
+				box1.appendChild(span);
+				text.value="";
+//				span.innerHTML=text.value;
+				var aaa=span.offsetLeft;
+				var timer=setInterval(function(){
+					aaa--;
+					
+					if(aaa< -span.offsetWidth){
+						clearInterval(timer);
+						box1.removeChild(span);
+					}
+					span.style.left=aaa +'px';
+				},suiji());
+				
+			}
+			var off=true;
+			btn1.onclick=function(){
+				if(off){
+					btn1.value='开启弹幕';
+					box1.style.display='none';
+				}else{
+					btn1.value="关闭弹幕";
+					box1.style.display='block';
+				}
+				off=!off;
+			}
+			function suiji(){
+				return Math.floor(Math.random()*14+10)
+			}
+			function suiji1(){
+				return Math.floor(Math.random()*280)
+			}
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 750px;
+				height: 500px;
+				border: 3px solid #ccc;
+				margin: 100px auto;
+				overflow: hidden;
+			}
+			#box li {
+				list-style: none;
+				float: left;
+				width: 125px;
+				height: 125px;
+				background: url("img/1.jpg");
+				box-shadow: 0 0 1px #999;
+			}
+			#right{
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				top:350px;
+				right: 200px;
+			}
+			#left{
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				top:350px;
+				left: 200px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<ul id="box">
+			
+		</ul>
+		<input type="button" value=">" id="right" />
+		<input type="button" value="<" id="left" />
+		<script type="text/javascript">
+			var oBox = document.getElementById("box");
+			var oright=document.getElementById("right");
+			var oleft=document.getElementById("left");
+			var str = '';
+			for( var i=0;i<24;i++ ){
+				str += '<li></li>'
+			}
+			oBox.innerHTML = str;
+			var li= oBox.children;
+			for (var j=0;j<li.length;j++){
+				li[j].style.backgroundPositionX = -Math.floor(j%6)*125+"px";
+				li[j].style.backgroundPositionY = -Math.floor(j/6)*125+"px";
+			}
+			var num=1;
+			oright.onclick=function(){
+				
+					num++;
+					if(num>5){
+						num=1;
+					}
+				aaaaa();
+			}
+			oleft.onclick=function(){
+				
+					num--;
+					if(num<1){
+						num=5;
+					}
+				aaaaa();
+			}
+			function aaaaa(){
+				var arr = [];
+					for( var i=0;i<24;i++ ){
+						arr.push(i);
+					}
+				var timer=setInterval(function(){
+				var index=Math.floor(Math.random()*arr.length);
+				li[arr[index]].style.backgroundImage= "url(img/"+num+".jpg)";
+				arr.splice(index,1);
+				if(arr.length==0){
+					clearInterval(timer)
+					}	
+				},50)
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+		
+	</body>
+</html>

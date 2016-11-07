@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="text" id="text" placeholder="请输入你对王学琴的印象" />
+		<div id="box">
+			
+		</div>
+		<script type="text/javascript">
+			var oBox=document.getElementById("box");
+			var oText=document.getElementById("text");
+			var reg=/笨蛋|傻瓜|二货|傻缺/g;
+			oText.onfocus=function(){
+				document.onkeyup=function(ev){
+					ev=ev||event;
+					if(ev.keyCode==13){
+						var val=oText.value;
+						val=val.replace(reg,function(n){
+							var str='';
+							for (var i=0;i<n.length;i++){
+								str+='*';
+							}
+							return str;
+						});
+						var p=document.createElement('p');
+						p.innerHTML=val;
+						oBox.appendChild(p);
+						oText.value='';
+					}
+				}
+			}
+			
+		</script>
+		
+	</body>
+</html>

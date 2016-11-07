@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#left{
+				width: 360px;
+				height: 360px;
+				border: 1px solid #ccc;
+				float: left;
+				position: relative;
+			}
+			#box{
+				width: 180px;
+				height: 180px;
+				background: #ddd;
+				opacity: .5;
+				filter: alpha(opacity=50);
+				position: absolute;
+				top: 0;
+				left: 0;
+				cursor: pointer;
+				display: none;
+			}
+			#right{
+				width:400px;
+				height: 400px;
+				border: 1px solid #ccc;
+				float: left;
+				overflow: hidden;
+				position: relative;
+				display: none;
+			}
+			
+			#big{
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="left">
+			<img src="img/little.jpg"/>
+			<div id="box">
+				
+			</div>
+		</div>
+		<div id="right">
+			<img src="img/big.jpg" id="big"/>
+		</div>
+		<script type="text/javascript">
+			var box=document.getElementById("box");
+			var left=document.getElementById("left");
+			var img=document.getElementById("big");
+			var right=document.getElementById("right");
+			left.onmouseover=function(){
+				box.style.display='block';
+				right.style.display='block';
+				box.onmousedown=function(ev){
+					ev=ev||event;
+					var x=ev.clientX-box.offsetLeft;
+					var y=ev.clientY-box.offsetTop;
+					left.onmousemove=function(ev){
+						ev=ev||event;
+						var x1=ev.clientX-x;
+						var y1=ev.clientY-y;
+						
+						if(x1>0&&x1<180){
+	//						box.style.top=y1+'px';
+							box.style.left=x1+'px';
+	//						img.style.top=-(y1*20/9)+'px';
+							img.style.left=-(x1*20/9)+'px';
+						}else if(x1<0){
+							box.style.left='0px';
+							img.style.left='0px';
+						}else if(x1>180){
+							box.style.left='180px';
+							img.style.left='-400px';
+						}
+						
+						if(y1>0&&y1<180){
+							box.style.top=y1+'px';
+							
+							img.style.top=-(y1*20/9)+'px';
+							
+						}else if(y1<0){
+							box.style.top='0px';
+							img.style.top='0px';
+						}else if(y1>180){
+							box.style.top='180px';
+							img.style.top='-400px';
+						}
+						
+					}	
+					
+				}
+			}
+			box.onmouseup=function(){
+				left.onmousemove=null;
+			}
+			left.onmouseout=function(){
+				box.style.display='none';
+				right.style.display='none';
+			}
+		</script>
+	</body>
+</html>

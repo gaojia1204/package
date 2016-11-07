@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box1{
+				position: relative;
+				width: 150px;
+			}
+			#address1{
+				width: 150px;
+				height: 200px;
+				border: 1px solid #ccc;
+				display: none;
+				position: absolute;
+				top:18px;
+				left: 0;
+				z-index: 3;
+			}
+			#address1 span{
+				display: block;
+				float: left;
+				width: 50px;
+			}
+			#address1 .span{
+				display: block;
+				background: red;
+				color: #fff;
+				width: 50px;
+			}
+			ul li{
+				list-style: none;
+			}
+			#all{
+				width: 233px;
+				height: 40px;
+				background:#B61D1D ;
+				font-size: 20px;
+				text-align: center;
+				line-height: 40px;
+				color: #fff;
+			}
+			 #naver{
+				background: #B61D1D;
+				float: left;
+				position: relative;
+				display: none;
+			}
+			 #naver li{
+				padding: 4px 20px 7.3px 21px;
+				color: #fff;
+			}
+			 #naver .naver-two{
+				position: absolute;
+				top:0;
+				left: 233px;
+				width: 150px;
+				background: #B61D1D;
+				opacity: .4;
+				display: none;
+				font-size: 20px;
+				
+			}
+			 #naver .naver-two .naver-three{
+				padding: 43.5px 0;
+			}
+			#text{
+				width: 300px;
+				height: 40px;
+			}
+			#list{
+				width: 302px;
+				border: 1px solid #000000;
+				display: none;
+			}
+			#list li{
+				width: 302px;
+				height: 30px;
+			}
+			#list li a{
+				display: block;
+				width: 302px;
+				height: 30px;
+				text-decoration: none;
+				color: #000000;
+			}
+			#list li a:hover{
+				background: red;
+			}
+			#search{
+				width: 302px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box1">
+			<p id="box"><span>送货至：</span><span id="address">北京</span></p>
+			<p id="address1">
+				<span class="span">北京</span>
+				<span>上海</span>
+				<span>广州</span>
+				<span>深圳</span>
+				<span>济南</span>
+				<span>重庆</span>
+				<span>爱的</span>
+				<span>搜索</span>
+			</p>
+		</div>
+		<div id="nav">
+			<p id="all">全部商品分类</p>
+			<ul id="naver">
+				<li class="naver-one">家用电器
+					<ul class='naver-two'>
+						<li class="naver-three">老师你好！</li>
+						<li class="naver-three">助教你好！</li>
+						<li class="naver-three">男同学你好！</li>
+						<li class="naver-three">女同学你好！</li>
+					</ul>
+				</li>
+				<li class="naver-one">手机、数码、京东通信
+					<ul class='naver-two'>
+						<li class="naver-three">老师你好！</li>
+						<li class="naver-three">助教你好！</li>
+						<li class="naver-three">男同学你好！</li>
+						<li class="naver-three">女同学你好！</li>
+					</ul>
+				</li>
+				<li class="naver-one">电脑、办公
+					<ul class='naver-two'>
+						<li class="naver-three">老师你好！</li>
+						<li class="naver-three">助教你好！</li>
+						<li class="naver-three">男同学你好！</li>
+						<li class="naver-three">女同学你好！</li>
+					</ul>
+				</li>
+				<li class="naver-one">家具、家居、家装、厨具
+					<ul class='naver-two'>
+						<li class="naver-three">老师你好！</li>
+						<li class="naver-three">助教你好！</li>
+						<li class="naver-three">男同学你好！</li>
+						<li class="naver-three">女同学你好！</li>
+					</ul>
+				</li>
+				<li class="naver-one">男装、女装、童装、内衣
+					<ul class='naver-two'>
+						<li class="naver-three">老师你好！</li>
+						<li class="naver-three">助教你好！</li>
+						<li class="naver-three">男同学你好！</li>
+						<li class="naver-three">女同学你好！</li>
+					</ul>
+				</li>
+				<li class="naver-one">个护化妆、清洁用品、宠物
+					<ul class='naver-two'>
+						<li class="naver-three">老师你好！</li>
+						<li class="naver-three">助教你好！</li>
+						<li class="naver-three">男同学你好！</li>
+						<li class="naver-three">女同学你好！</li>
+					</ul>
+				</li>
+				<li class="naver-one">鞋靴、鞋包、珠宝、奢侈品
+					<ul class='naver-two'>
+						<li class="naver-three">老师你好！</li>
+						<li class="naver-three">助教你好！</li>
+						<li class="naver-three">男同学你好！</li>
+						<li class="naver-three">女同学你好！</li>
+					</ul>
+				</li>
+				<li class="naver-one">运动户外、钟表
+					<ul class='naver-two'>
+						<li class="naver-three">老师你好！</li>
+						<li class="naver-three">助教你好！</li>
+						<li class="naver-three">男同学你好！</li>
+						<li class="naver-three">女同学你好！</li>
+					</ul>
+				</li>
+				<li class="naver-one">汽车、汽车用品
+					<ul class='naver-two'>
+						<li class="naver-three">老师你好！</li>
+						<li class="naver-three">助教你好！</li>
+						<li class="naver-three">男同学你好！</li>
+						<li class="naver-three">女同学你好！</li>
+					</ul>
+				</li>
+				<li class="naver-one">母婴、玩具乐器
+					<ul class='naver-two'>
+						<li class="naver-three">老师你好！</li>
+						<li class="naver-three">助教你好！</li>
+						<li class="naver-three">男同学你好！</li>
+						<li class="naver-three">女同学你好！</li>
+					</ul>
+				</li>
+				<li class="naver-one">食品、酒类、生鲜、特产
+					<ul class='naver-two'>
+						<li class="naver-three">老师你好！</li>
+						<li class="naver-three">助教你好！</li>
+						<li class="naver-three">男同学你好！</li>
+						<li class="naver-three">女同学你好！</li>
+					</ul>
+				</li>
+				<li class="naver-one">医药保健
+					<ul class='naver-two'>
+						<li class="naver-three">老师你好！</li>
+						<li class="naver-three">助教你好！</li>
+						<li class="naver-three">男同学你好！</li>
+						<li class="naver-three">女同学你好！</li>
+					</ul>
+				</li>
+				<li class="naver-one">图书、音像、电子书
+				
+					<ul class='naver-two'>
+						<li class="naver-three">老师你好！</li>
+						<li class="naver-three">助教你好！</li>
+						<li class="naver-three">男同学你好！</li>
+						<li class="naver-three">女同学你好！</li>
+					</ul>
+				</li>
+				<li class="naver-one">彩票、旅行、充值、票务
+				
+					<ul class='naver-two'>
+						<li class="naver-three">老师你好！</li>
+						<li class="naver-three">助教你好！</li>
+						<li class="naver-three">男同学你好！</li>
+						<li class="naver-three">女同学你好！</li>
+					</ul>
+				</li>
+				<li class="naver-one">理财、众筹、白条、保险
+				
+					<ul class='naver-two'>
+						<li class="naver-three">老师你好！</li>
+						<li class="naver-three">助教你好！</li>
+						<li class="naver-three">男同学你好！</li>
+						<li class="naver-three">女同学你好！</li>
+					</ul>
+				
+				</li>
+			</ul>	
+		</div>
+		<div id="search">
+			<input type="text" name="text" id="text" placeholder="失败品" />
+			<ul id="list">
+			</ul>
+		</div>
+		<div id="Loupe">
+			<div id="left">
+				
+			</div>
+			<div id="right">
+				
+			</div>
+			<ul id="SM">
+				<li></li>
+			</ul>
+			
+			
+			
+			
+		</div>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var add=document.getElementById("address");
+			var box=document.getElementById("box");
+			var box1=document.getElementById("box1");
+			var add1=document.getElementById("address1");
+			var span=add1.children;
+			//左上角送货至
+			address();
+			//左上角送货至结束
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

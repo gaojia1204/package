@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 500px;
+				height: 360px;
+				border: 1px solid #000;
+				margin: 100px auto;
+				position: relative;
+			}
+			#list li{
+				list-style: none;
+				width: 20px;
+				height: 20px;
+				background: #000;
+				opacity: .4;
+				float: left;
+				border-radius: 50%;
+				margin-left:5px ;
+			}
+			#list{
+				overflow: hidden;
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				margin-left: -60px;
+			}
+			#list .li1{
+				background: red;
+			}
+			#right{
+				width: 30px;
+				height: 30px;
+				background: #ccc;
+				color: #000;
+				position: absolute;
+				right: 10px;
+				top:50%;
+				margin-top:-15px ;
+				font-size: 20px;
+				font-weight: 600;
+				text-align: center;
+				line-height: 30px;
+			}
+			#left{
+				width: 30px;
+				height: 30px;
+				background: #ccc;
+				color: #000;
+				position: absolute;
+				left: 10px;
+				top:50%;
+				margin-top:-15px ;
+				font-size: 20px;
+				font-weight: 600;
+				text-align: center;
+				line-height: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<img src="img/1.jpg" id="pic"/>
+			<ul id="list">
+				<li class="li1"></li><li></li><li></li><li></li><li></li>
+			</ul>
+			<span id="right">&gt;</span>
+			<span id="left">&lt;</span>
+		</div>
+		<script src="js/daye.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var box=document.getElementById("box");
+			var pic=document.getElementById("pic");
+			var list=document.getElementById("list");
+			var li=list.children;
+			var left=document.getElementById("left");
+			var right=document.getElementById("right");
+			var num=1;
+			var timer1=null;
+			for (var i=0;i<li.length;i++){
+				li[i].index=i;
+				li[i].onmouseover=function(){
+					num=this.index+1;
+					tab();
+				}	
+			}
+			box.onmouseout=function(){
+				timer1=setInterval(function(){
+				num++;
+				if(num>5){
+					num=1;
+				}
+				console.log(num)
+				tab();
+				},3000)	
+			}
+			box.onmouseover=function(){
+				clearInterval(timer1)
+			}
+			timer1=setInterval(function(){
+				num++;
+				if(num>5){
+					num=1;
+				}
+				console.log(num)
+				tab();
+				},3000)
+			right.onclick=function(){
+				
+				num++;
+				if(num>5){
+					num=1;
+				}
+				tab();	
+			}
+			left.onclick=function(){
+				num--;
+				if(num<1){
+					num=5;
+				}
+				tab();
+			}
+			function tab(){	
+			for(var j=0;j<li.length;j++){
+					if((num-1)==j){
+						li[j].style.background='red';
+						daye(box,{'opacity':0},function(){
+							pic.src='img/'+num+'.jpg';
+							daye(box,{'opacity':100})
+						})	
+					}else{
+						li[j].style.background='#000';
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

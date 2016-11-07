@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 300px;
+				height: 200px;
+				margin: 100px auto;
+			}
+			.box1{
+				overflow: hidden;
+				margin: 0px auto;
+				width: 300px;
+			}
+			#text{
+				float: left;
+				display: block;
+				margin: 0px auto;
+			}
+			#btn{
+				float: left;
+				display: block;
+				margin: 0px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box" > 千锋教育是一家专业的教育公司。学院目前开设以下课程，包括ios、安卓、php、java、UI、HTML5，教学品类众多，是一家口碑优秀的教育公司。学院位于北京市，拥有天丰利商场、沙河校区、等教学场地。通过千锋教育学习平台学习的学员来自国内各省市、港澳台地区及国外地区。千锋教育教学，主要以线下教育学习为主，扣丁学堂为辅。以HTML5原有的课程基础，老师的专研文化精神，开启多门课程。通过扎实的技术支持，通过线下教学，课程共享。可以分享老师授课内容。课后可以马上解答。在其余时间可以在QQ群交流。以及老师QQ在线可以一对一问题解千锋答。</div>
+		<div class="box1">
+		<input type="text" name="text" id="text" placeholder="请输入要搜索的内容" />
+		<input type="button" name="btn" id="btn" value="提交" />
+		</div>
+		<script type="text/javascript">
+			var box=document.getElementById("box");
+			var str=box.innerHTML;
+			var text=document.getElementById('text');
+			var btn =document.getElementById('btn');
+			
+			btn.onclick=function(){
+				var arr =str.split(text.value);
+				
+				box.innerHTML=arr.join('<span style=" background:green;color:#fff">'+text.value+'</span>');
+				
+			}	
+				
+			
+		</script>
+	</body>
+</html>

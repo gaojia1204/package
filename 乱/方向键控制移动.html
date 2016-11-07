@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				position: relative;
+			}
+			#box{
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				top:0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		<script type="text/javascript">
+			var box=document.getElementById("box");
+			var num=0;
+			var num1=0;
+			document.onkeydown=function(ev){
+				var ev=ev||event;
+				
+				if(ev.keyCode=='37'){
+					num-=10;
+					box.style.left=num+'px';
+					return;
+				}else if(ev.keyCode=='38'){
+					num1-=10;
+					box.style.top=num1+'px';
+					return;
+				}else if(ev.keyCode=='39'){
+					num+=10;
+					box.style.left=num+'px';
+					return;
+				}else if(ev.keyCode=='40'){
+					num1+=10;
+					box.style.top=num1+'px';
+					return;
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				
+			}
+			body{
+				background: black;
+			}
+			p{
+				font-size: 100px;
+				color: #FFF;
+				text-align: center;
+			}
+			#out{
+				font-size: 100px;
+				color: #fff;
+				text-align: center;
+			}
+			#col,#inner{
+				font-size: 80px;
+				color: yellow;
+				text-align: center;
+				margin-top: 50px;
+			}
+			#col,#inner1{
+				font-size: 80px;
+				color: yellow;
+				text-align: center;
+				margin-top: 50px;
+			}
+			#btn{
+				width: 400px;
+				margin: 0 auto;
+				overflow: hidden;
+				
+			}
+			#btn1{
+				display: block;
+				width: 150px;
+				height: 50px;
+				font-size: 30px;
+				float: left;
+			}
+			#btn2{
+				display: block;
+				width: 150px;
+				height: 50px;
+				font-size: 30px;
+				float: left;
+				margin-left: 50px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<p>真心话大冒险</p>
+		<div id="out">start</div>
+		<div id="col">名字</div>
+			
+		<div id="inner">真心话</div>
+		<div id="inner1">大冒险</div>
+		
+	</body>
+	<script>
+		var out = document.getElementById("out")
+		var col = document.getElementById("col")
+		var inner = document.getElementById("inner")
+		var inner1 = document.getElementById("inner1")
+		var arr1 = ['王学琴','刘百博','郝宏麟','李佳徽','隔壁老王','宋哲','王春晓','马蓉','马蓉','马蓉','马蓉','马冬','郝宏麟','郝宏麟','郝宏麟','郝宏麟','马冬','马冬','张靖宇','张靖宇','张靖宇','张靖宇','张靖宇','张靖宇','张靖宇','郝宏麟','郝宏麟','郝宏麟','张靖宇','张靖宇','张靖宇','张靖宇','王齐齐',]
+		var arr2 =['你最喜欢吃什么？','你觉得讲师帅吗？','是讲师帅还是助教帅？','你尿过裤子吗？','你有喜欢的人吗？','你出过轨吗？']
+		var arr3 = ['唱歌','跳舞','对着窗外大喊我需要经纪人','面壁','跟我同桌告白','请我同桌吃饭',]
+		var x = true;
+		var timer=null;
+		out.onclick=function(){
+			if(x){
+				out.innerHTML="stop";
+				ran();
+				inner.innerHTML="真心话";
+				inner1.innerHTML="大冒险";
+				x=false;
+			}else{
+				out.innerHTML="start";
+				stop();
+				x=true;
+			}
+		}
+		inner.onclick=function(){
+			if(x){
+				
+				ran1();
+				x=false;
+			}else{
+				
+				stop();
+				x=true;
+			}
+		}
+		inner1.onclick=function(){
+			if(x){
+				
+				ran2();
+				x=false;
+			}else{
+				
+				stop();
+				x=true;
+			}
+		}
+		function ran(){
+			timer = setInterval(function(){
+				col.innerHTML = arr1[Math.floor(Math.random()*arr1.length)]
+
+			},10)
+		}
+		function ran1(){
+			timer = setInterval(function(){
+
+				inner.innerHTML = arr2[Math.floor(Math.random()*arr2.length)]
+			},10)
+		}
+		function ran2(){
+			timer = setInterval(function(){
+
+				inner1.innerHTML = arr3[Math.floor(Math.random()*arr3.length)]
+			},10)
+		}
+		function stop(){
+			clearInterval(timer);
+		}
+	</script>
+</html>
